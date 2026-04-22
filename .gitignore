@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Große Datendateien (lokal, nicht im Repo)
+*.duckdb
+data/
+
+# Generierte Plots (lokal, nicht im Repo)
+output/
+
+# Logs
+scripts/auto_commit.log

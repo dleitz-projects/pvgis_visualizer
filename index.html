@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PV-Ausrichtung schnell richtig entscheiden — ohne komplexe Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>PV-Ausrichtung schnell richtig entscheiden —<br>ohne komplexe Simulation</h1>
+    <div class="meta">Von Dennis Leitz &nbsp;·&nbsp; 20. April 2026 &nbsp;·&nbsp; Solarenergie &amp; Datenanalyse</div>
+
+    <!-- Kennzahlen -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="value">703</div>
+            <div class="label">Tilt/Azimuth-Kombinationen</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">16</div>
+            <div class="label">Jahre Zeitreihendaten (2005–2020)</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">7,7×</div>
+            <div class="label">Beste vs. schlechteste Ausrichtung für Eigennutzung</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">5,2×</div>
+            <div class="label">Ertragsunterschied beste vs. schlechteste Ausrichtung</div>
+        </div>
+    </div>
+    <p class="intro-note">Grafiken zu Ertragsmaximum, Eigennutzung und Tagesauslastung — direkt ablesbar, ohne Simulation.</p>
+
+    <h2>Warum Ausrichtung zählt</h2>
+    <p>
+        Welcher Tilt, welcher Azimuth — und nach welchem Kriterium? Je nach Projektziel kann
+        die optimale Ausrichtung einer Photovoltaikanlage unterschiedlich ausfallen: Wer den
+        Jahresertrag maximieren will, trifft eine andere Wahl als wer Eigenverbrauch optimiert
+        oder die Tagesauslastung für eine Wärmepumpe gleichmäßig verteilen möchte. Bisher
+        erforderte eine solche Abwägung aufwändige Simulationen. Dieser Beitrag zeigt, dass
+        ein vorberechnetes Grafik-Set aus PVGIS-Daten diese Abschätzung in wenigen Minuten
+        ermöglicht — ohne eigenes Simulationstool.
+    </p>
+
+    <div class="highlight">
+        Planungsfragen zu Jahresertrag-Maximum, Eigennutzung-Optimum und tageszeitlicher
+        Auslastung lassen sich direkt ablesen, ohne eine einzige Simulation selbst durchzuführen.
+    </div>
+
+    <h2>Methodik</h2>
+    <p>
+        Für diese Analyse wurde die <strong>PVGIS API v5.2</strong> der Europäischen Kommission (JRC)
+        genutzt, um für einen Standort in Norddeutschland (52,3°N, 9,6°E) alle relevanten
+        Tilt- und Azimuth-Kombinationen systematisch auszuwerten: 19 Tilt-Werte (0–90° in 5°-Schritten)
+        × 37 Azimuth-Werte (−180° bis +180° in 10°-Schritten) = <strong>703 Kombinationen</strong>.
+        Für jede Konfiguration wurden stündliche Zeitreihendaten über <strong>16 Jahre (2005–2020)</strong>
+        abgerufen und statistisch ausgewertet — normiert auf 1 kWp Anlagenleistung mit 14 % Systemverlusten.
+        Der vollständige Code ist auf <a href="https://github.com/dleitz-projects/pvgis-solar-ertrag-visualizer" target="_blank">GitHub</a> verfügbar.
+    </p>
+
+    <h2>Ergebnisse auf einen Blick</h2>
+    <p>
+        Die Grafiken decken die häufigsten Planungsfragen ab — je nach Kriterium
+        liest man direkt die passende Ausrichtung ab:
+    </p>
+
+    <p>
+        <strong>Ertragsmaximum:</strong> Das Optimum liegt bei Tilt 40°, Azimuth 0° (Süd) mit
+        999,9 kWh/kWp. Der Bereich Tilt 20–50°, Azimuth ±30° ist robust: Abweichungen kosten
+        weniger als 5 % — Planer können Dachgeometrien anpassen, ohne nennenswerte Verluste.
+    </p>
+
+    <figure>
+        <img src="img/01_heatmap_jahresertrag.png" alt="Heatmap Jahresertrag Tilt/Azimuth">
+        <figcaption>Abb. 1 — Ertragsmaximum ablesen: Jahresertrag (kWh/kWp) für alle 703 Kombinationen.
+        Optimum bei Tilt 40°, Azimuth 0° — der helle Bereich zeigt die ertragsrobuste Zone.</figcaption>
+    </figure>
+
+    <p>
+        <strong>Eigennutzung maximieren:</strong> Wer Eigenverbrauch priorisiert — etwa mit
+        Wärmepumpe im Winter — erkennt auf einen Blick, dass eine flachere Neigung
+        (Tilt 20–30°) die saisonale Balance verbessert. Fassadeninstallationen (Tilt 90°) sind
+        im Dezember überraschend konkurrenzfähig, da der tiefe Sonnenstand die steile Neigung
+        begünstigt. Der saisonale Ausgleich variiert je Ausrichtung um den Faktor 7,7 —
+        direkt aus Abb. 2 und 3 ablesbar.
+    </p>
+
+    <figure>
+        <img src="img/02_heatmap_alle_monate_gitter.png" alt="Heatmap Monatserträge alle 12 Monate">
+        <figcaption>Abb. 2 — Eigennutzung planen: Monatsertrag für alle 703 Kombinationen je Monat.
+        Je nach Verbrauchsprofil lässt sich die optimale saisonale Balance direkt ablesen.</figcaption>
+    </figure>
+
+    <figure>
+        <img src="img/03_saisonvergleich_jan_jun.png" alt="Direktvergleich Januar vs. Juni">
+        <figcaption>Abb. 3 — Saisonale Balance beurteilen: Direktvergleich Januar vs. Juni zeigt,
+        welche Ausrichtung Winter- und Sommerertrag am gleichmäßigsten verteilt.</figcaption>
+    </figure>
+
+    <p>
+        <strong>Tagesauslastung beurteilen:</strong> Wer prüfen möchte, ob eine Anlage morgens
+        oder abends mehr produziert — oder wie stark das Einspeiseprofil von der Lastganglinie
+        abweicht — liest dies direkt aus Abb. 4 und 5 ab. Die 16-Jahres-Statistik liefert
+        Mittelwert, interannuelle Variabilität (±1σ) sowie Maximum und Minimum über 16 Jahre —
+        direkt als Planungsgrundlage nutzbar, ohne eigene Simulation.
+    </p>
+
+    <figure>
+        <img src="img/05_tagesverlauf_jan_jun.png" alt="Tagesverlauf Januar und Juni">
+        <figcaption>Abb. 4 — Tagesauslastung prüfen: Stündliches Einspeiseprofil für Januar und Juni.
+        Direkt ablesbar: Spitzenzeiten, Morgen-/Abendverhalten und Streuung über 16 Jahre.</figcaption>
+    </figure>
+
+    <figure>
+        <img src="img/06_tagesverlauf_12monate.png" alt="Tagesverlauf alle 12 Monate mit Statistik">
+        <figcaption>Abb. 5 — Ganzjährige Tagesauslastung: Stündliches Profil für alle 12 Monate.
+        Das Streuband (±1σ) zeigt die interannuelle Variabilität des stündlichen Ertrags über 16 Jahre.
+        Die gestrichelten Linien markieren Maximum und Minimum über den Analysezeitraum.</figcaption>
+    </figure>
+
+    <h2>Fazit &amp; Ausblick</h2>
+    <p>
+        Die gezeigten Grafiken machen aufwändige Einzelsimulationen für die erste Planungsphase
+        überflüssig: Ertragsmaximum, Eigennutzungs-Optimum und Tagesauslastung lassen sich direkt
+        ablesen — für beliebige Tilt/Azimuth-Kombinationen, ohne eigenes Simulationstool. Besonders
+        bei Gebäuden mit eingeschränkter Dachgeometrie hilft das, schnell zu beurteilen, welcher
+        Kompromiss zwischen Fläche und Ausrichtung tragbar ist. Der Ansatz ist reproduzierbar und
+        auf andere Standorte übertragbar. Als nächstes: Erweiterung auf konkrete Anlagenkonfigurationen
+        mit mehreren Strings und Integration des Lastgangs für Eigenverbrauchsoptimierung.
+        Wer den Ansatz selbst anwenden möchte: Der Code ist auf <a href="https://github.com/dleitz-projects/pvgis-solar-ertrag-visualizer" target="_blank">GitHub</a> verfügbar.
+    </p>
+
+    <div class="tags">
+        <span>#Solarenergie</span>
+        <span>#Photovoltaik</span>
+        <span>#Datenanalyse</span>
+        <span>#PVGIS</span>
+        <span>#Python</span>
+        <span>#Energiewende</span>
+    </div>
+
+    <footer>
+        Datenquelle: PVGIS API v5.2 — European Commission, Joint Research Centre (JRC) ·
+        Standort: 52,276°N, 9,573°E · Zeitraum: 2005–2020 · Systemverluste: 14 % ·
+        <a href="https://github.com/dleitz-projects/pvgis-solar-ertrag-visualizer" target="_blank">Code auf GitHub</a>
+    </footer>
+
+</body>
+</html>

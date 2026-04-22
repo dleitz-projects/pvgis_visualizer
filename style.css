@@ -1,0 +1,189 @@
+/* =============================================================================
+   Blog-Stylesheet — PVGIS Solarertrag Visualizer
+   Verwendung: output/blog/*.html
+   ============================================================================= */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 780px;
+    margin: 40px auto;
+    padding: 0 24px;
+    color: #1a1a1a;
+    line-height: 1.75;
+    background: #ffffff;
+}
+
+h1 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #0a66c2;
+    margin-bottom: 0.3em;
+    line-height: 1.25;
+}
+
+.meta {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1em;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+    margin-top: 2.2em;
+    margin-bottom: 0.4em;
+}
+
+p { margin: 0.85em 0; }
+
+/* --- Hervorhebungsbox --- */
+.highlight {
+    background: #f0f7ff;
+    border-left: 4px solid #0a66c2;
+    padding: 14px 18px;
+    border-radius: 0 6px 6px 0;
+    margin: 1.6em 0;
+    font-style: italic;
+    color: #1a1a1a;
+}
+
+/* --- Kennzahlen-Grid --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+    gap: 14px;
+    margin: 1.8em 0;
+}
+
+.stat-card {
+    background: #f4f8ff;
+    border-radius: 10px;
+    padding: 18px 14px;
+    text-align: center;
+    border: 1px solid #d0e4f7;
+}
+
+.stat-card .value {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #0a66c2;
+    line-height: 1.1;
+}
+
+.stat-card .label {
+    font-size: 0.78rem;
+    color: #555;
+    margin-top: 6px;
+}
+
+.intro-note {
+    font-size: 0.95rem;
+    color: #444;
+    font-style: italic;
+    border-left: 3px solid #0a66c2;
+    padding-left: 14px;
+    margin: 0 0 2em 0;
+}
+
+/* --- Tabelle --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 0.88rem;
+}
+
+th {
+    background: #0a66c2;
+    color: white;
+    padding: 10px 13px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 9px 13px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+tr:nth-child(even) td { background: #f8f9fb; }
+tr:last-child td { font-weight: 600; background: #eef5ff; }
+
+/* --- Monatsbalken --- */
+.month-bar-wrap {
+    margin: 1.5em 0;
+}
+
+.month-row {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    font-size: 0.85rem;
+}
+
+.month-label {
+    width: 36px;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.bar-bg {
+    flex: 1;
+    background: #e8f0f8;
+    border-radius: 4px;
+    height: 18px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #0a66c2, #38a3f1);
+}
+
+.month-val {
+    width: 80px;
+    text-align: right;
+    color: #333;
+    padding-left: 10px;
+}
+
+/* --- Bilder --- */
+figure {
+    margin: 1.8em 0;
+}
+
+figure img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    display: block;
+}
+
+figcaption {
+    font-size: 0.82rem;
+    color: #666;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+/* --- Tags & Footer --- */
+.tags {
+    margin-top: 2.8em;
+    padding-top: 1em;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.85rem;
+    color: #0a66c2;
+}
+
+.tags span { margin-right: 12px; }
+
+footer {
+    margin-top: 1.5em;
+    font-size: 0.78rem;
+    color: #aaa;
+    padding-bottom: 40px;
+}
