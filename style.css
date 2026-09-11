@@ -126,16 +126,20 @@ table.ohne-summe tr:nth-child(even) td { background: #f8f9fb; }
     margin: -1em 0 2em 0;
 }
 
-/* --- Formeln --- */
+/* --- Formeln (gesetzt mit KaTeX) --- */
 .formel {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    font-size: 0.92rem;
     background: #f6f8fa;
     border-left: 3px solid #d0d7de;
-    padding: 10px 14px;
+    padding: 12px 18px;
     margin: 1.2em 0 0.4em 0;
     overflow-x: auto;
 }
+
+/* Ohne JavaScript bleibt die TeX-Quelle stehen, dann wenigstens monospace */
+.formel { font-family: "SFMono-Regular", Consolas, Menlo, monospace; font-size: 0.92rem; }
+.formel .katex { font-size: 1.05rem; }
+
+.formel-note sub { font-size: 0.75em; }
 
 .formel-note {
     font-size: 0.85rem;
