@@ -6,24 +6,21 @@
     <title>Vertikale bifaziale Module — Ertrag und Einspeiseerlös</title>
     <link rel="stylesheet" href="style.css">
 
-    <!-- Formelsatz mit KaTeX aus dem CDN. Ohne JavaScript bleibt die
-         TeX-Quelle als Text stehen und ist weiterhin lesbar. -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
-          integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
-          crossorigin="anonymous">
-    <script defer
-            src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
-            integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
-            crossorigin="anonymous"></script>
+    <!-- Formelsatz mit KaTeX, lokal im Repo unter vendor/katex/.
+         Ohne JavaScript bleibt die Klartextfassung stehen. -->
+    <link rel="stylesheet" href="vendor/katex/katex.min.css">
+    <script defer src="vendor/katex/katex.min.js"></script>
     <script>
-        // Jeder Absatz mit der Klasse "formel" enthaelt seine TeX-Quelle als
-        // Text und wird nach dem Laden an Ort und Stelle gesetzt.
+        // Jedes Element mit data-tex traegt seine TeX-Quelle im Attribut und
+        // den lesbaren Klartext als Inhalt. Absaetze werden abgesetzt,
+        // Symbole im Fliesstext inline gesetzt.
         window.addEventListener("load", function () {
             if (!window.katex) { return; }
-            document.querySelectorAll("p.formel").forEach(function (el) {
-                katex.render(el.textContent.trim(), el,
-                             { displayMode: true, throwOnError: false });
+            document.querySelectorAll("[data-tex]").forEach(function (el) {
+                katex.render(el.getAttribute("data-tex"), el, {
+                    displayMode: el.tagName === "P",
+                    throwOnError: false
+                });
             });
         });
     </script>
@@ -55,21 +52,21 @@
     <p>
         <strong>Ertragsseite.</strong> Grundlage sind stündliche Zeitreihen der PVGIS API v5.3 der Europäischen Kommission für einen Standort in Norddeutschland bei 52,3°N und 9,6°E. Abgerufen wurden alle Kombinationen aus 19 Neigungswinkeln von 0 bis 90° und 37 Himmelsrichtungen von −180° bis +180°, jeweils über die Jahre 2005 bis 2023, normiert auf 1 kWp Nennleistung und 14 % Systemverluste. Aus diesen 19 Jahren wird ein Typjahr gebildet: für jede der 8.760 Stunden eines Jahres der Mittelwert über alle Jahre. Einzelne gute oder schlechte Wetterjahre fallen damit heraus.
     </p>
-    <p class="formel">\bar{P}(m,d,h) \;=\; \frac{1}{N} \sum_{y=2005}^{2023} P_y(m,d,h)\qquad N = 19</p>
-    <p class="formel-note">P̄ ist die mittlere Leistung der Jahresstunde (Monat m, Tag d, Stunde h, UTC) in W je kWp, P<sub>y</sub> der Wert dieser Stunde im Jahr y.</p>
+    <p class="formel" data-tex="\bar{P}(m,d,h) \;=\; \frac{1}{N} \sum_{y=2005}^{2023} P_y(m,d,h)\qquad N = 19">P̄(m, d, h) = 1/N · Σ P_y(m, d, h) über y = 2005 … 2023, N = 19</p>
+    <p class="formel-note"><span data-tex="\bar{P}">P̄</span> ist die mittlere Leistung der Jahresstunde (Monat <span data-tex="m">m</span>, Tag <span data-tex="d">d</span>, Stunde <span data-tex="h">h</span>, UTC) in W je kWp, <span data-tex="P_y">P_y</span> der Wert dieser Stunde im Jahr <span data-tex="y">y</span>.</p>
     <p>
         <strong>Preisseite.</strong> Die Day-Ahead-Spotpreise der deutschen Gebotszone stammen von der Energy-Charts-API des Fraunhofer ISE, die ihrerseits auf den SMARD-Daten der Bundesnetzagentur beruht. Sie liegen ab 2015 vor: bis September 2018 für die gemeinsame Gebotszone mit Österreich, danach für Deutschland und Luxemburg.
     </p>
     <p>
         <strong>Verknüpfung.</strong> Der Erlös eines Jahres ist die Summe über alle Stunden aus der Leistung dieser Stunde mal dem Spotpreis derselben Stunde. Die Ertragsseite ist dabei immer dasselbe Typjahr, nur die Preise wechseln. Unterschiede im Erlös zwischen den Preisjahren stammen also ausschließlich aus dem Markt und nicht aus dem Wetter.
     </p>
-    <p class="formel">E(a) \;=\; \sum_{t=1}^{8760} \frac{\bar{P}_{a,t}}{1000} \cdot \frac{p_t}{1000}\qquad \text{in EUR/kWp}</p>
-    <p class="formel-note">E(a) ist der Jahreserlös der Ausrichtung a, P̄<sub>a,t</sub> die Typjahr-Leistung der Stunde t in W je kWp und p<sub>t</sub> der Spotpreis derselben Stunde in EUR/MWh.</p>
+    <p class="formel" data-tex="E(a) \;=\; \sum_{t=1}^{8760} \frac{\bar{P}_{a,t}}{1000} \cdot \frac{p_t}{1000}\qquad \text{in EUR/kWp}">E(a) = Σ P̄_a,t / 1000 · p_t / 1000 über t = 1 … 8.760 [EUR/kWp]</p>
+    <p class="formel-note"><span data-tex="E(a)">E(a)</span> ist der Jahreserlös der Ausrichtung <span data-tex="a">a</span>, <span data-tex="\bar{P}_{a,t}">P̄_a,t</span> die Typjahr-Leistung der Stunde <span data-tex="t">t</span> in W je kWp und <span data-tex="p_t">p_t</span> der Spotpreis derselben Stunde in EUR/MWh.</p>
     <p>
         <strong>Vertikales bifaziales Modul.</strong> Ein vertikal aufgestelltes bifaziales Modul wird als Summe zweier gegenüberliegender Flächen gerechnet. Die Vorderseite geht mit vollem Wirkungsgrad ein, die Rückseite mit angenommenen 90 %. Da die Rückseite schwächer ist, ist es nicht gleichgültig, welche der beiden Himmelsrichtungen die starke Seite bekommt. Dasselbe Modul in derselben Ebene, nur um 180° gedreht montiert, ist deshalb ein eigener Fall und wird durchgehend mitgeführt.
     </p>
-    <p class="formel">E_{\mathrm{bi}}(\beta) \;=\; E(90^\circ,\, \beta - 90^\circ) \;+\; 0{,}9 \cdot E(90^\circ,\, \beta + 90^\circ)</p>
-    <p class="formel-note">β ist die Ausrichtung der Modulebene, E(90°, a) der Wert der senkrechten Einzelfläche mit Azimut a. Für die um 180° gedrehte Montage tauschen die beiden Summanden ihre Faktoren.</p>
+    <p class="formel" data-tex="E_{\mathrm{bi}}(\beta) \;=\; E(90^\circ,\, \beta - 90^\circ) \;+\; 0{,}9 \cdot E(90^\circ,\, \beta + 90^\circ)">E_bi(β) = E(90°, β − 90°) + 0,9 · E(90°, β + 90°)</p>
+    <p class="formel-note"><span data-tex="\beta">β</span> ist die Ausrichtung der Modulebene, <span data-tex="E(90^\circ,\, a)">E(90°, a)</span> der Wert der senkrechten Einzelfläche mit Azimut <span data-tex="a">a</span>. Für die um 180° gedrehte Montage tauschen die beiden Summanden ihre Faktoren.</p>
     <p>
         <strong>Ausrichtungsachse.</strong> Ein bifaziales Modul belegt immer zwei Modulebenen im Abstand von 180°. In den Abbildungen 2 bis 6 beschreibt die Abszisse die Orientierung der Modulebenen: bei 0° zeigt die Modulvorderseite nach Osten und die Modulrückseite nach Westen. Bei +90° zeigt die Modulvorderseite nach Süden und die Modulrückseite nach Norden. Bei 180° gedrehten Modulen sind Vorder- und Rückseite vertauscht. Die Ost-West-Ebene wurde als Nullpunkt gewählt, da sie für ein senkrecht montiertes bifaziales Modul am ehesten vergleichbar ist mit der 0°-Südausrichtung einer einseitigen Anlage. Sie sammelt Morgen- und Abendsonne spiegelbildlich zur Mittagsachse.
     </p>
