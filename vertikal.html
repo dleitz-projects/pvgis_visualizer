@@ -50,7 +50,7 @@
 
     <h2>Daten und Methoden</h2>
     <p>
-        <strong>Ertragsseite.</strong> Grundlage sind stündliche Zeitreihen der PVGIS API v5.3 der Europäischen Kommission für einen Standort in Norddeutschland bei 52,3°N und 9,6°E. Abgerufen wurden alle Kombinationen aus 19 Neigungswinkeln von 0 bis 90° und 37 Himmelsrichtungen von −180° bis +180°, jeweils über die Jahre 2005 bis 2023, normiert auf 1 kWp Nennleistung und 14 % Systemverluste. Aus diesen 19 Jahren wird ein Typjahr gebildet: für jede der 8.760 Stunden eines Jahres der Mittelwert über alle Jahre. Einzelne gute oder schlechte Wetterjahre fallen damit heraus.
+        <strong>Ertragsseite.</strong> Grundlage sind stündliche Zeitreihen der PVGIS API v5.3 der Europäischen Kommission für einen Standort in Norddeutschland bei 52,3°N und 9,6°E. Abgerufen wurden alle Kombinationen aus 19 Neigungswinkeln von 0 bis 90° und 37 Himmelsrichtungen von −180° bis +180°, jeweils über die Jahre 2005 bis 2023, normiert auf 1 kWp Nennleistung und 14 % Systemverluste. Aus diesen 19 Jahren wird ein Typjahr gebildet: für jede der 8.760 Stunden eines Jahres der Mittelwert über alle Jahre. Einzelne gute oder schlechte Wetterjahre fallen damit heraus.
     </p>
     <p class="formel" data-tex="\bar{P}(m,d,h) \;=\; \frac{1}{N} \sum_{y=2005}^{2023} P_y(m,d,h)\qquad N = 19">P̄(m, d, h) = 1/N · Σ P_y(m, d, h) über y = 2005 … 2023, N = 19</p>
     <p class="formel-note"><span data-tex="\bar{P}">P̄</span> ist die mittlere Leistung der Jahresstunde (Monat <span data-tex="m">m</span>, Tag <span data-tex="d">d</span>, Stunde <span data-tex="h">h</span>, UTC) in kW je kWp, <span data-tex="P_y">P_y</span> der Wert dieser Stunde im Jahr <span data-tex="y">y</span>.</p>
@@ -63,7 +63,7 @@
     <p class="formel" data-tex="E(a) \;=\; \sum_{t=1}^{8760} \bar{P}_{a,t} \cdot p_t\qquad \text{in EUR/kWp}">E(a) = Σ P̄_a,t · p_t über t = 1 … 8.760 [EUR/kWp]</p>
     <p class="formel-note"><span data-tex="E(a)">E(a)</span> ist der Jahreserlös der Ausrichtung <span data-tex="a">a</span>, <span data-tex="\bar{P}_{a,t}">P̄_a,t</span> die Typjahr-Leistung der Stunde <span data-tex="t">t</span> in kW je kWp und <span data-tex="p_t">p_t</span> der Spotpreis derselben Stunde in EUR je kWh. Spotpreise werden in EUR/MWh veröffentlicht und dafür umgerechnet.</p>
     <p>
-        <strong>Vertikales bifaziales Modul.</strong> Ein vertikal aufgestelltes bifaziales Modul wird als Summe zweier gegenüberliegender Flächen gerechnet. Die Vorderseite geht mit vollem Wirkungsgrad ein, die Rückseite mit angenommenen 90 %. Da die Rückseite schwächer ist, ist es nicht gleichgültig, welche der beiden Himmelsrichtungen die starke Seite bekommt. Dasselbe Modul in derselben Ebene, nur um 180° gedreht montiert, ist deshalb ein eigener Fall und wird durchgehend mitgeführt.
+        <strong>Vertikales bifaziales Modul.</strong> Ein vertikal aufgestelltes bifaziales Modul wird als Summe zweier gegenüberliegender Flächen gerechnet. Die Vorderseite geht mit vollem Wirkungsgrad ein, die Rückseite mit angenommenen 90 %. Da die Rückseite schwächer ist, ist es nicht gleichgültig, welche der beiden Himmelsrichtungen die starke Seite bekommt. Dasselbe Modul in derselben Ebene, nur um 180° gedreht montiert, ist deshalb ein eigener Fall und wird durchgehend mitgeführt.
     </p>
     <p class="formel" data-tex="E_{\mathrm{bi}}(\beta) \;=\; E(90^\circ,\, \beta - 90^\circ) \;+\; 0{,}9 \cdot E(90^\circ,\, \beta + 90^\circ)">E_bi(β) = E(90°, β − 90°) + 0,9 · E(90°, β + 90°)</p>
     <p class="formel-note"><span data-tex="\beta">β</span> ist die Ausrichtung der Modulebene, <span data-tex="E(90^\circ,\, a)">E(90°, a)</span> der Wert der senkrechten Einzelfläche mit Azimut <span data-tex="a">a</span>. Für die um 180° gedrehte Montage tauschen die beiden Summanden ihre Faktoren.</p>
@@ -81,10 +81,10 @@
         Abbildung 1 zeigt den mittleren Jahresertrag für alle möglichen Ausrichtungskombinationen. Jede Kachel steht für eine Aufstellung, die Zeile gibt den Neigungswinkel, die Spalte die Himmelsrichtung. Die Ertragswerte sind Mittelwerte aus stündlichen Zeitreihen über 19 Jahre.
     </p>
     <p>
-        Das Maximum liegt bei 40° Neigung und Südausrichtung mit 1.029 kWh/kWp. Diese Aufstellung ist der übliche Auslegungsfall und dient im Folgenden durchgehend als Vergleichsmaßstab. Für diesen Beitrag zählt die oberste Zeile mit 90° Neigung, also die vertikale Aufstellung. Dort steht nach Süden 737 kWh/kWp, nach Osten 519 und nach Westen 508.
+        Das Maximum liegt bei 40° Neigung und Südausrichtung mit 1.029 kWh/kWp. Diese Aufstellung ist der übliche Auslegungsfall und dient im Folgenden durchgehend als Vergleichsmaßstab. Für diesen Beitrag zählt die oberste Zeile mit 90° Neigung, also die vertikale Aufstellung. Dort steht nach Süden 737 kWh/kWp, nach Osten 519 und nach Westen 508.
     </p>
     <p>
-        Diese Zeile enthält bereits alles, was für ein vertikales bifaziales Modul gebraucht wird. Jede Kachel beschreibt eine einseitige vertikale Fläche. Ein bifaziales Modul besteht aus zwei solchen Flächen im Abstand von 180°, die sich denselben Rahmen teilen. Sein Ertrag ist die Summe der beiden zugehörigen Orientierungen, wobei die Rückseite mit 90 % eingeht. Ein Modul mit der Vorderseite nach Osten kombiniert also die Kachel bei −90° mit der Kachel bei +90°, letztere lediglich zu 90 %.
+        Diese Zeile enthält bereits alles, was für ein vertikales bifaziales Modul gebraucht wird. Jede Kachel beschreibt eine einseitige vertikale Fläche. Ein bifaziales Modul besteht aus zwei solchen Flächen im Abstand von 180°, die sich denselben Rahmen teilen. Sein Ertrag ist die Summe der beiden zugehörigen Orientierungen, wobei die Rückseite mit 90 % eingeht. Ein Modul mit der Vorderseite nach Osten kombiniert also die Kachel bei −90° mit der Kachel bei +90°, letztere lediglich zu 90 %.
     </p>
 
     <figure>
@@ -98,7 +98,7 @@
         Abbildung 2 führt diese Summenbildung aus Modulvorder- und Modulrückseite für alle Orientierungen aus. Die durchgezogene Kurve gilt für Module, deren Vorderseite bei 0° nach Osten und deren Rückseite nach Westen zeigt. Die gestrichelte Kurve stellt ein Modul dar, das um 180° gedreht montiert ist, also mit Vorder- und Rückseite vertauscht. Diese Unterscheidung durch die Linienart gilt in allen folgenden Abbildungen. Die grüne Linie ist die Referenz: sie zeigt die sonst übliche, nach dem Ertragsmaximum gewählte Ausrichtung dieses Standorts, also Azimut 0° nach Süden bei 40° Neigung aus Abbildung 1.
     </p>
     <p>
-        Beide bifazialen Kurven verlaufen flach und erreichen ihr Maximum dicht neben der Ost-West-Ebene. Die durchgezogene Kurve liegt mit 981 kWh/kWp bei +10° am höchsten, die gestrichelte mit 976 kWh/kWp bei −10°. Gegenüber der Referenz mit 1.029 kWh/kWp fehlen damit 4,6 %, die vertikale Aufstellung erreicht 95,4 % des Ertrages. Nach Kilowattstunden bewertet bleibt die konventionelle Ausrichtung vorteilhaft.
+        Beide bifazialen Kurven verlaufen flach und erreichen ihr Maximum dicht neben der Ost-West-Ebene. Die durchgezogene Kurve liegt mit 981 kWh/kWp bei +10° am höchsten, die gestrichelte mit 976 kWh/kWp bei −10°. Gegenüber der Referenz mit 1.029 kWh/kWp fehlen damit 4,6 %, die vertikale Aufstellung erreicht 95,4 % des Ertrages. Nach Kilowattstunden bewertet bleibt die konventionelle Ausrichtung vorteilhaft.
     </p>
 
     <figure>
@@ -118,7 +118,7 @@
         Der Unterschied der beiden Orientierungen ist gut zu sehen. Die auf den Morgen ausgelegte Variante trifft an diesem Tag hohe Erträge und hohe Spotpreise am Vormittag, die auf den Abend ausgelegte Variante erreicht hohe Spotpreise nur über eine kürzere Zeitspanne. Besonders deutlich ist, dass die konventionelle Anlage an diesem Tag zwar hohe Erträge erzielt, wegen der niedrigen Spotpreise zur Mittagszeit aber den geringsten Erlös einfährt.
     </p>
     <p>
-        Für diesen einen Tag lässt sich das ausrechnen. Die konventionelle Ausrichtung erzeugt 4,23 kWh je kWp und erlöst damit 8,6 Cent. Beide vertikalen Aufstellungen erzeugen 4,46 kWh, also 5 % mehr, erlösen damit aber 19,6 beziehungsweise 19,2 Cent, also mehr als das Doppelte. Der Tag ist bewusst ein ausgeprägter Sommertag und nicht repräsentativ, er zeigt aber den Mechanismus, der sich im Jahresmittel abgeschwächt wiederfindet.
+        Für diesen einen Tag lässt sich das ausrechnen. Die konventionelle Ausrichtung erzeugt 4,23 kWh je kWp und erlöst damit 8,6 Cent. Beide vertikalen Aufstellungen erzeugen 4,46 kWh, also 5 % mehr, erlösen damit aber 19,6 beziehungsweise 19,2 Cent, also mehr als das Doppelte. Der Tag ist bewusst ein ausgeprägter Sommertag und nicht repräsentativ, er zeigt aber den Mechanismus, der sich im Jahresmittel abgeschwächt wiederfindet.
     </p>
 
     <figure>
@@ -130,7 +130,7 @@
         Rechnet man das für jede Stunde des Jahres für alle möglichen Orientierungen durch, entsteht Abbildung 4. Für jedes der drei Preisjahre 2023 bis 2025 gibt es eine Kurve, dazu die um 180° gedrehte Montage und die einseitige Variante. Die waagerechte Linie derselben Farbe ist der Erlös der konventionellen Ausrichtung im selben Jahr.
     </p>
     <p>
-        In allen drei Jahren verläuft die Kurve der vertikalen bifazialen Anlagen über einen weiten Bereich oberhalb der Referenzlinie konventioneller Anlagen. Eine Aufstellung, die nach Abbildung 2 rund 5 % weniger Strom erzeugt, bringt am Spotmarkt also mehr Geld ein. Der Grund steht in Abbildung 3: die fehlenden Kilowattstunden fehlen mittags, wenn wenig gezahlt wird, die zusätzlichen kommen morgens und abends dazu, wenn mehr gezahlt wird.
+        In allen drei Jahren verläuft die Kurve der vertikalen bifazialen Anlagen über einen weiten Bereich oberhalb der Referenzlinie konventioneller Anlagen. Eine Aufstellung, die nach Abbildung 2 rund 5 % weniger Strom erzeugt, bringt am Spotmarkt also mehr Geld ein. Der Grund steht in Abbildung 3: die fehlenden Kilowattstunden fehlen mittags, wenn wenig gezahlt wird, die zusätzlichen kommen morgens und abends dazu, wenn mehr gezahlt wird.
     </p>
 
     <figure>
@@ -144,7 +144,7 @@
         Die Erlösunterschiede werden besonders in der normierten Darstellung deutlich. Abbildung 5 teilt dafür den Erlös aller Ausrichtungen durch den Erlös, den die konventionelle Ausrichtung im selben Jahr erbracht hat. Die Linie bei 1,00 ist damit dieser Vergleichsfall, und jeder Abstand nach oben ist ein prozentualer Mehrerlös.
     </p>
     <p>
-        Für 2023 ließe sich sagen: eine vertikale Aufstellung mit der Vorderseite bei +10° hätte 8,8 % mehr Erlös gebracht als die nach dem Ertragsmaximum gewählte Ausrichtung. Für 2024 steigt dieser Wert auf 17,3 % und für 2025 auf 21,1 %. Weiter lässt sich sagen, dass 2025 der gesamte Bereich von −50° bis +70° einen höheren Erlös erbracht hat als die konventionelle Ausrichtung. Die genaue Lage des Maximums ist dagegen unkritisch, zwischen 0° und +20° liegen alle Werte innerhalb eines Prozents.
+        Für 2023 ließe sich sagen: eine vertikale Aufstellung mit der Vorderseite bei +10° hätte 8,8 % mehr Erlös gebracht als die nach dem Ertragsmaximum gewählte Ausrichtung. Für 2024 steigt dieser Wert auf 17,3 % und für 2025 auf 21,1 %. Weiter lässt sich sagen, dass 2025 der gesamte Bereich von −50° bis +70° einen höheren Erlös erbracht hat als die konventionelle Ausrichtung. Die genaue Lage des Maximums ist dagegen unkritisch, zwischen 0° und +20° liegen alle Werte innerhalb eines Prozents.
     </p>
 
     <figure>
@@ -156,7 +156,7 @@
         Im Weiteren wird ebenfalls der Trend der Vorjahre gezeigt. Abbildung 6 erweitert die Betrachtung auf die Preisjahre 2018 bis 2025 und kennzeichnet jeweils das Maximum und verbindet es mit dem des Folgejahres.
     </p>
     <p>
-        Der Mehrerlös wächst von +0,2 % im Jahr 2018 über +3,9 % im Jahr 2020 und +8,8 % im Jahr 2023 auf +21,1 % im Jahr 2025. Neben dem steigenden Vorteil der vertikalen bifazialen Anlagen zeigt der Pfad eine zweite Bewegung. Das Optimum liegt nicht bei der reinen Ost-West-Ebene, sondern durchgehend leicht in Richtung Süd-Nord gedreht, in den Jahren 2019 und 2020 bei +20°, seit 2022 bei +10°. Diese Drehung verschiebt die Erzeugung im Jahresmittel in Richtung Vormittag: bei +20° fallen 53,0 % der Jahresmenge vor 11 Uhr UTC an, bei 0° sind es 48,1 %. Dass das Optimum seit 2022 wieder näher an der symmetrischen Lage liegt, heißt entsprechend, dass die Abendstunden gegenüber den Vormittagsstunden an Wert gewonnen haben. Für die um 180° gedrehte Montage, im Bild die Quadrate, liegt das Optimum über fast alle Jahre unverändert bei 0°.
+        Der Mehrerlös wächst von +0,2 % im Jahr 2018 über +3,9 % im Jahr 2020 und +8,8 % im Jahr 2023 auf +21,1 % im Jahr 2025. Neben dem steigenden Vorteil der vertikalen bifazialen Anlagen zeigt der Pfad eine zweite Bewegung. Das Optimum liegt nicht bei der reinen Ost-West-Ebene, sondern durchgehend leicht in Richtung Süd-Nord gedreht, in den Jahren 2019 und 2020 bei +20°, seit 2022 bei +10°. Diese Drehung verschiebt die Erzeugung im Jahresmittel in Richtung Vormittag: bei +20° fallen 53,0 % der Jahresmenge vor 11 Uhr UTC an, bei 0° sind es 48,1 %. Dass das Optimum seit 2022 wieder näher an der symmetrischen Lage liegt, heißt entsprechend, dass die Abendstunden gegenüber den Vormittagsstunden an Wert gewonnen haben. Für die um 180° gedrehte Montage, im Bild die Quadrate, liegt das Optimum über fast alle Jahre unverändert bei 0°.
     </p>
 
     <figure>
@@ -167,7 +167,7 @@
 
     <h2>Fazit</h2>
     <p>
-        Der Befund lässt sich in einem Satz zusammenfassen: Vertikal aufgestellte bifaziale Module erreichen im statistischen Mittel nur 95,4 % des Ertrages der konventionellen, auf Ertrag optimierten Ausrichtung, erzielen am Spotmarkt aber in sieben der acht Jahre seit 2018 mehr Erlös, und der Abstand wächst: 2025 sind es 21,1 %.
+        Der Befund lässt sich in einem Satz zusammenfassen: Vertikal aufgestellte bifaziale Module erreichen im statistischen Mittel nur 95,4 % des Ertrages der konventionellen, auf Ertrag optimierten Ausrichtung, erzielen am Spotmarkt aber in sieben der acht Jahre seit 2018 mehr Erlös, und der Abstand wächst: 2025 sind es 21,1 %.
     </p>
     <p>
         Tabelle 1 stellt die Konzepte gegenüber. Für die vertikalen bifazialen Anlagen wurden +10° für die normale Montage und 0° für die um 180° gedrehte Montage gewählt. Beide Ausrichtungen stellen für den Zeitraum von 2018 bis 2025 jeweils die Orientierung mit dem höchsten Gesamterlös ihrer Montagerichtung dar.
@@ -185,20 +185,20 @@
             <th class="num">+10°</th>
             <th class="num">0°, gedreht</th>
         </tr>
-        <tr><td>2018</td><td class="num">45,30</td><td class="num">45,41</td><td class="num">45,00</td><td class="num">+0,2 %</td><td class="num">−0,7 %</td></tr>
-        <tr><td>2019</td><td class="num">36,50</td><td class="num">37,15</td><td class="num">36,78</td><td class="num">+1,8 %</td><td class="num">+0,8 %</td></tr>
-        <tr><td>2020</td><td class="num">26,85</td><td class="num">27,84</td><td class="num">27,52</td><td class="num">+3,7 %</td><td class="num">+2,5 %</td></tr>
-        <tr><td>2021</td><td class="num">82,55</td><td class="num">81,62</td><td class="num">80,56</td><td class="num">−1,1 %</td><td class="num">−2,4 %</td></tr>
-        <tr><td>2022</td><td class="num">227,34</td><td class="num">243,34</td><td class="num">242,06</td><td class="num">+7,0 %</td><td class="num">+6,5 %</td></tr>
-        <tr><td>2023</td><td class="num">77,58</td><td class="num">84,41</td><td class="num">83,88</td><td class="num">+8,8 %</td><td class="num">+8,1 %</td></tr>
-        <tr><td>2024</td><td class="num">52,65</td><td class="num">61,78</td><td class="num">61,85</td><td class="num">+17,3 %</td><td class="num">+17,5 %</td></tr>
-        <tr><td>2025</td><td class="num">52,78</td><td class="num">63,92</td><td class="num">64,12</td><td class="num">+21,1 %</td><td class="num">+21,5 %</td></tr>
-        <tr><td>Σ</td><td class="num">601,55</td><td class="num">645,47</td><td class="num">641,77</td><td class="num">+7,3 %</td><td class="num">+6,7 %</td></tr>
+        <tr><td>2018</td><td class="num">45,30</td><td class="num">45,41</td><td class="num">45,00</td><td class="num">+0,2 %</td><td class="num">−0,7 %</td></tr>
+        <tr><td>2019</td><td class="num">36,50</td><td class="num">37,15</td><td class="num">36,78</td><td class="num">+1,8 %</td><td class="num">+0,8 %</td></tr>
+        <tr><td>2020</td><td class="num">26,85</td><td class="num">27,84</td><td class="num">27,52</td><td class="num">+3,7 %</td><td class="num">+2,5 %</td></tr>
+        <tr><td>2021</td><td class="num">82,55</td><td class="num">81,62</td><td class="num">80,56</td><td class="num">−1,1 %</td><td class="num">−2,4 %</td></tr>
+        <tr><td>2022</td><td class="num">227,34</td><td class="num">243,34</td><td class="num">242,06</td><td class="num">+7,0 %</td><td class="num">+6,5 %</td></tr>
+        <tr><td>2023</td><td class="num">77,58</td><td class="num">84,41</td><td class="num">83,88</td><td class="num">+8,8 %</td><td class="num">+8,1 %</td></tr>
+        <tr><td>2024</td><td class="num">52,65</td><td class="num">61,78</td><td class="num">61,85</td><td class="num">+17,3 %</td><td class="num">+17,5 %</td></tr>
+        <tr><td>2025</td><td class="num">52,78</td><td class="num">63,92</td><td class="num">64,12</td><td class="num">+21,1 %</td><td class="num">+21,5 %</td></tr>
+        <tr><td>Σ</td><td class="num">601,55</td><td class="num">645,47</td><td class="num">641,77</td><td class="num">+7,3 %</td><td class="num">+6,7 %</td></tr>
     </table>
     <div class="tab-titel">Tabelle 1 — Einspeiseerlös und Mehrerlös gegenüber der konventionellen Ausrichtung</div>
 
     <p>
-        Eine Nebenbeobachtung betrifft die Frage, welche der beiden Montagerichtungen die bessere ist. Neben der Ausrichtung der Ebene entscheidet die Wahl der Modulvorderseite darüber, ob der Schwerpunkt der Erzeugung am Vormittag oder am Abend liegt. Tabelle 2 stellt je Jahr die Maxima beider Montagerichtungen aus Abbildung 6 gegenüber. 2021 wanderte das Optimum in Richtung Vormittag und lag mit +30° am weitesten dort; die gedrehte Montage hatte ihr Maximum bei +10°. Seither läuft die Bewegung zurück zur symmetrischen Ost-West-Ebene, seit 2022 liegt das Optimum bei +10° und 0°. Der Abend hat dabei gegenüber dem Vormittag an Wert gewonnen: 2021 lag die abendliche Preisspitze im Jahresmittel 13 % über der morgendlichen, 2025 waren es 26 %. Dazu passt, dass seit 2024 erstmals die um 180° gedrehte Montage mit der starken Seite nach Westen vorn liegt, wenn auch nur um 0,1 bis 0,3 %. Ob sich das fortsetzt, ist offen: Der Ausbau großer Batteriespeicher verschiebt Strom aus der Mittagsdelle in die Abendstunden und kann den Abstand zwischen beiden Tageshälften wieder verringern.
+        Eine Nebenbeobachtung betrifft die Frage, welche der beiden Montagerichtungen die bessere ist. Neben der Ausrichtung der Ebene entscheidet die Wahl der Modulvorderseite darüber, ob der Schwerpunkt der Erzeugung am Vormittag oder am Abend liegt. Tabelle 2 stellt je Jahr die Maxima beider Montagerichtungen aus Abbildung 6 gegenüber. 2021 wanderte das Optimum in Richtung Vormittag und lag mit +30° am weitesten dort; die gedrehte Montage hatte ihr Maximum bei +10°. Seither läuft die Bewegung zurück zur symmetrischen Ost-West-Ebene, seit 2022 liegt das Optimum bei +10° und 0°. Der Abend hat dabei gegenüber dem Vormittag an Wert gewonnen: 2021 lag die abendliche Preisspitze im Jahresmittel 13 % über der morgendlichen, 2025 waren es 26 %. Dazu passt, dass seit 2024 erstmals die um 180° gedrehte Montage mit der starken Seite nach Westen vorn liegt, wenn auch nur um 0,1 bis 0,3 %. Ob sich das fortsetzt, ist offen: Der Ausbau großer Batteriespeicher verschiebt Strom aus der Mittagsdelle in die Abendstunden und kann den Abstand zwischen beiden Tageshälften wieder verringern.
     </p>
     <table class="ohne-summe">
         <tr>
@@ -210,14 +210,14 @@
             <th class="num">bifazial</th>
             <th class="num">180° gedreht</th>
         </tr>
-        <tr><td>2018</td><td class="num">45,41</td><td class="num">45,00</td><td class="num">−0,91 %</td></tr>
-        <tr><td>2019</td><td class="num">37,16</td><td class="num">36,78</td><td class="num">−1,02 %</td></tr>
-        <tr><td>2020</td><td class="num">27,90</td><td class="num">27,55</td><td class="num">−1,27 %</td></tr>
-        <tr><td>2021</td><td class="num">82,14</td><td class="num">80,63</td><td class="num">−1,84 %</td></tr>
-        <tr><td>2022</td><td class="num">243,34</td><td class="num">242,06</td><td class="num">−0,53 %</td></tr>
-        <tr><td>2023</td><td class="num">84,41</td><td class="num">83,88</td><td class="num">−0,63 %</td></tr>
-        <tr><td>2024</td><td class="num">61,78</td><td class="num">61,85</td><td class="num">+0,12 %</td></tr>
-        <tr><td>2025</td><td class="num">63,92</td><td class="num">64,12</td><td class="num">+0,32 %</td></tr>
+        <tr><td>2018</td><td class="num">45,41</td><td class="num">45,00</td><td class="num">−0,91 %</td></tr>
+        <tr><td>2019</td><td class="num">37,16</td><td class="num">36,78</td><td class="num">−1,02 %</td></tr>
+        <tr><td>2020</td><td class="num">27,90</td><td class="num">27,55</td><td class="num">−1,27 %</td></tr>
+        <tr><td>2021</td><td class="num">82,14</td><td class="num">80,63</td><td class="num">−1,84 %</td></tr>
+        <tr><td>2022</td><td class="num">243,34</td><td class="num">242,06</td><td class="num">−0,53 %</td></tr>
+        <tr><td>2023</td><td class="num">84,41</td><td class="num">83,88</td><td class="num">−0,63 %</td></tr>
+        <tr><td>2024</td><td class="num">61,78</td><td class="num">61,85</td><td class="num">+0,12 %</td></tr>
+        <tr><td>2025</td><td class="num">63,92</td><td class="num">64,12</td><td class="num">+0,32 %</td></tr>
     </table>
     <div class="tab-titel">Tabelle 2 — Erlösmaximum beider Montagerichtungen je Preisjahr</div>
 
@@ -232,7 +232,7 @@
     </div>
 
     <footer>
-        Datenquellen: PVGIS API v5.3 — European Commission, Joint Research Centre (JRC) · Spotpreise: Energy-Charts, Fraunhofer ISE, Datenbasis SMARD/Bundesnetzagentur, CC BY 4.0 · Standort: 52,3°N, 9,6°E · PV-Zeitraum 2005–2023 · Preise 2015–2025 · Systemverluste 14 % · Rückseitenwirkungsgrad 90 % · <a href="https://github.com/dleitz-projects/pvgis_visualizer" target="_blank">Code auf GitHub</a>
+        Datenquellen: PVGIS API v5.3 — European Commission, Joint Research Centre (JRC) · Spotpreise: Energy-Charts, Fraunhofer ISE, Datenbasis SMARD/Bundesnetzagentur, CC BY 4.0 · Standort: 52,3°N, 9,6°E · PV-Zeitraum 2005–2023 · Preise 2015–2025 · Systemverluste 14 % · Rückseitenwirkungsgrad 90 % · <a href="https://github.com/dleitz-projects/pvgis_visualizer" target="_blank">Code auf GitHub</a>
     </footer>
 
 </body>
