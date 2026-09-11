@@ -53,15 +53,15 @@
         <strong>Ertragsseite.</strong> Grundlage sind stündliche Zeitreihen der PVGIS API v5.3 der Europäischen Kommission für einen Standort in Norddeutschland bei 52,3°N und 9,6°E. Abgerufen wurden alle Kombinationen aus 19 Neigungswinkeln von 0 bis 90° und 37 Himmelsrichtungen von −180° bis +180°, jeweils über die Jahre 2005 bis 2023, normiert auf 1 kWp Nennleistung und 14 % Systemverluste. Aus diesen 19 Jahren wird ein Typjahr gebildet: für jede der 8.760 Stunden eines Jahres der Mittelwert über alle Jahre. Einzelne gute oder schlechte Wetterjahre fallen damit heraus.
     </p>
     <p class="formel" data-tex="\bar{P}(m,d,h) \;=\; \frac{1}{N} \sum_{y=2005}^{2023} P_y(m,d,h)\qquad N = 19">P̄(m, d, h) = 1/N · Σ P_y(m, d, h) über y = 2005 … 2023, N = 19</p>
-    <p class="formel-note"><span data-tex="\bar{P}">P̄</span> ist die mittlere Leistung der Jahresstunde (Monat <span data-tex="m">m</span>, Tag <span data-tex="d">d</span>, Stunde <span data-tex="h">h</span>, UTC) in W je kWp, <span data-tex="P_y">P_y</span> der Wert dieser Stunde im Jahr <span data-tex="y">y</span>.</p>
+    <p class="formel-note"><span data-tex="\bar{P}">P̄</span> ist die mittlere Leistung der Jahresstunde (Monat <span data-tex="m">m</span>, Tag <span data-tex="d">d</span>, Stunde <span data-tex="h">h</span>, UTC) in kW je kWp, <span data-tex="P_y">P_y</span> der Wert dieser Stunde im Jahr <span data-tex="y">y</span>.</p>
     <p>
         <strong>Preisseite.</strong> Die Day-Ahead-Spotpreise der deutschen Gebotszone stammen von der Energy-Charts-API des Fraunhofer ISE, die ihrerseits auf den SMARD-Daten der Bundesnetzagentur beruht. Sie liegen ab 2015 vor: bis September 2018 für die gemeinsame Gebotszone mit Österreich, danach für Deutschland und Luxemburg.
     </p>
     <p>
         <strong>Verknüpfung.</strong> Der Erlös eines Jahres ist die Summe über alle Stunden aus der Leistung dieser Stunde mal dem Spotpreis derselben Stunde. Die Ertragsseite ist dabei immer dasselbe Typjahr, nur die Preise wechseln. Unterschiede im Erlös zwischen den Preisjahren stammen also ausschließlich aus dem Markt und nicht aus dem Wetter.
     </p>
-    <p class="formel" data-tex="E(a) \;=\; \sum_{t=1}^{8760} \frac{\bar{P}_{a,t}}{1000} \cdot \frac{p_t}{1000}\qquad \text{in EUR/kWp}">E(a) = Σ P̄_a,t / 1000 · p_t / 1000 über t = 1 … 8.760 [EUR/kWp]</p>
-    <p class="formel-note"><span data-tex="E(a)">E(a)</span> ist der Jahreserlös der Ausrichtung <span data-tex="a">a</span>, <span data-tex="\bar{P}_{a,t}">P̄_a,t</span> die Typjahr-Leistung der Stunde <span data-tex="t">t</span> in W je kWp und <span data-tex="p_t">p_t</span> der Spotpreis derselben Stunde in EUR/MWh.</p>
+    <p class="formel" data-tex="E(a) \;=\; \sum_{t=1}^{8760} \bar{P}_{a,t} \cdot p_t\qquad \text{in EUR/kWp}">E(a) = Σ P̄_a,t · p_t über t = 1 … 8.760 [EUR/kWp]</p>
+    <p class="formel-note"><span data-tex="E(a)">E(a)</span> ist der Jahreserlös der Ausrichtung <span data-tex="a">a</span>, <span data-tex="\bar{P}_{a,t}">P̄_a,t</span> die Typjahr-Leistung der Stunde <span data-tex="t">t</span> in kW je kWp und <span data-tex="p_t">p_t</span> der Spotpreis derselben Stunde in EUR je kWh. Spotpreise werden in EUR/MWh veröffentlicht und dafür umgerechnet.</p>
     <p>
         <strong>Vertikales bifaziales Modul.</strong> Ein vertikal aufgestelltes bifaziales Modul wird als Summe zweier gegenüberliegender Flächen gerechnet. Die Vorderseite geht mit vollem Wirkungsgrad ein, die Rückseite mit angenommenen 90 %. Da die Rückseite schwächer ist, ist es nicht gleichgültig, welche der beiden Himmelsrichtungen die starke Seite bekommt. Dasselbe Modul in derselben Ebene, nur um 180° gedreht montiert, ist deshalb ein eigener Fall und wird durchgehend mitgeführt.
     </p>
