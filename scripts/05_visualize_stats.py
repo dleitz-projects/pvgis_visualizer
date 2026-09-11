@@ -1,12 +1,12 @@
 """
 05_visualize_stats.py
 =====================
-Visualisierungen auf Basis der 16-Jahres-Statistiken (seriescalc).
+Visualisierungen auf Basis der mehrjährigen seriescalc-Statistiken.
 
 Plots werden gespeichert unter: output/plots/{NAME}/stats/
 
 Gruppe 1 — Jahresebene (Heatmaps):
-  01_jahresertrag_mean.png         ← E_y Mittelwert über 16 Jahre
+  01_jahresertrag_mean.png         ← E_y Mittelwert über alle Jahre
   02_jahresertrag_std.png          ← E_y Standardabweichung
   03_jahresertrag_vk.png           ← Variationskoeffizient (std/mean in %)
 
@@ -106,7 +106,9 @@ def optimum_finden(df: pd.DataFrame, wert: str = "E_y_mean"):
 
 
 def standort_info() -> str:
-    return f"{config.NAME}  |  {config.LAT}°N, {config.LON}°E  |  2005–2020 (16 Jahre)"
+    jahre = config.SERIES_ENDYEAR - config.SERIES_STARTYEAR + 1
+    return (f"{config.NAME}  |  {config.STANDORT_ANZEIGE}  |  "
+            f"{config.SERIES_STARTYEAR}–{config.SERIES_ENDYEAR} ({jahre} Jahre)")
 
 
 # =============================================================================
@@ -127,7 +129,7 @@ def plot_jahresertrag_mean(df_jahr: pd.DataFrame) -> None:
                 annot=sigfig_annot(pivot), fmt="", annot_kws=ANNOT_KWS)
     ax.add_patch(plt.Rectangle((max_pos[1], max_pos[0]), 1, 1,
                  fill=False, edgecolor="blue", lw=2.5))
-    ax.set_title(f"Mittlerer Jahresertrag (kWh/kWp) — 16-Jahres-Mittel\n"
+    ax.set_title(f"Mittlerer Jahresertrag (kWh/kWp) — Mehrjahresmittel\n"
                  f"{standort_info()}\n"
                  f"Optimum: Tilt={opt_tilt}°, Azimuth={opt_azi}°, "
                  f"E_y={max_val:.0f} kWh/kWp", fontsize=11)
@@ -352,7 +354,7 @@ def main():
     else:
         opt_tilt, opt_azi, opt_val = optimum_finden(df_jahr)
 
-    print(f"Optimum (16-Jahres-Mittel): Tilt={opt_tilt}°, Azimuth={opt_azi}°, "
+    print(f"Optimum (Mehrjahresmittel): Tilt={opt_tilt}°, Azimuth={opt_azi}°, "
           f"E_y={opt_val:.0f} kWh/kWp\n")
     print("Erstelle Plots ...")
 

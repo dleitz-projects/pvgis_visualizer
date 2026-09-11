@@ -118,7 +118,7 @@ def plot_speichern(fig, dateiname: str) -> None:
 
 
 def standort_info() -> str:
-    return f"{config.NAME}  |  {config.LAT}°N, {config.LON}°E  |  2005–2020 (16 Jahre)"
+    return f"{config.NAME}  |  {config.STANDORT_ANZEIGE}  |  2005–2020 (16 Jahre)"
 
 
 def string_label(s: dict, kurz: bool = False) -> str:

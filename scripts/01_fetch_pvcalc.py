@@ -127,7 +127,7 @@ def daten_abrufen(cache_pfad: str, jahr: int) -> dict:
     uebersprungen = 0
 
     print(f"\nStarte PVcalc-Abfragen: {gesamt} Kombinationen")
-    print(f"Standort: {config.LAT}°N, {config.LON}°E  |  Jahr: {jahr}")
+    print(f"Standort: {config.STANDORT_ANZEIGE}  |  Jahr: {jahr}")
     print(f"Raster: Tilt {config.TILT_MIN}–{config.TILT_MAX}° ({config.TILT_STEP}°-Schritte), "
           f"Azimuth {config.AZI_MIN}–{config.AZI_MAX}° ({config.AZI_STEP}°-Schritte)\n")
 

@@ -133,8 +133,12 @@ def seriescalc_abrufen(tilt: int, azimuth: int, startyear: int, endyear: int):
             df["tilt"]    = tilt
             df["azimuth"] = azimuth
 
+            # Globalstrahlung in der Modulebene heißt in v5.3 "G(i)"
+            if "G(i)" in df.columns:
+                df = df.rename(columns={"G(i)": "G_i"})
+
             # Nur relevante Spalten behalten
-            spalten = ["time", "tilt", "azimuth", "P", "Gb_i", "Gd_i", "Gr_i",
+            spalten = ["time", "tilt", "azimuth", "P", "G_i", "Gb_i", "Gd_i", "Gr_i",
                        "H_sun", "T2m", "WS10m"]
             df = df[[s for s in spalten if s in df.columns]]
 
@@ -170,7 +174,7 @@ def daten_abrufen(db_pfad: str, startyear: int, endyear: int) -> None:
 
     jahre = endyear - startyear + 1
     print(f"\nStarte seriescalc-Abfragen: {gesamt} Kombinationen")
-    print(f"Standort:  {config.NAME}  |  {config.LAT}°N, {config.LON}°E")
+    print(f"Standort:  {config.NAME}  |  {config.STANDORT_ANZEIGE}")
     print(f"Zeitraum:  {startyear}–{endyear}  ({jahre} Jahre, ~{jahre * 8760:,} h/Kombination)")
     print(f"Datenbank: {db_pfad}")
     print(f"Bereits vorhanden: {vorhanden}/{gesamt} Kombinationen\n")

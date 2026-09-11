@@ -183,7 +183,7 @@ def plot_alle_monate_gitter(pivots: dict) -> None:
     """
     fig, axes = plt.subplots(3, 4, figsize=(22, 13), sharex=True, sharey=True)
     fig.suptitle("Monatserträge (kWh/kWp) — Tilt/Azimuth-Raster\n"
-                 f"{config.NAME}  |  {config.LAT}°N, {config.LON}°E  |  Jahr: {config.PVCALC_YEAR}",
+                 f"{config.NAME}  |  {config.STANDORT_ANZEIGE}  |  Jahr: {config.PVCALC_YEAR}",
                  fontsize=13, y=1.01)
 
     for idx, ax in enumerate(axes.flat):
@@ -268,7 +268,7 @@ def plot_saisonvergleich(pivots: dict, monat_a: int, monat_b: int) -> None:
 
     fig.suptitle(
         f"Saisonvergleich: {MONATSNAMEN[monat_a-1]} vs. {MONATSNAMEN[monat_b-1]}\n"
-        f"Standort: {config.LAT}°N, {config.LON}°E  |  Jahr: {config.PVCALC_YEAR}",
+        f"Standort: {config.STANDORT_ANZEIGE}  |  Jahr: {config.PVCALC_YEAR}",
         fontsize=13,
     )
     plt.tight_layout()
@@ -403,7 +403,7 @@ def main():
     )
     args = parser.parse_args()
 
-    standort_info = f"{config.NAME}  |  {config.LAT}°N, {config.LON}°E  |  Jahr: {config.PVCALC_YEAR}"
+    standort_info = f"{config.NAME}  |  {config.STANDORT_ANZEIGE}  |  Jahr: {config.PVCALC_YEAR}"
     print(f"\nPVGIS Visualizer — {standort_info}")
     print(f"Lade Pivot-Tabellen aus: {args.ordner}\n")
 
