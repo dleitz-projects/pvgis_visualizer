@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 500" width="1140" height="500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<defs>
+  <marker id="pfeilAchse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#3a3a3a"/></marker>
+  <marker id="pfeilMass" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#b3452c"/></marker>
+  <marker id="pfeilVorn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#0a66c2"/></marker>
+  <marker id="pfeilHinten" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#8a8f98"/></marker>
+  <style>
+    .titel {  font-size: 15px; font-weight: 600; fill: #1a1a1a; }
+    .kopf  {  font-size: 13px; font-weight: 600; fill: #1a1a1a; }
+    .unter {  font-size: 11.5px; fill: #555; }
+    .lab   {  font-size: 12px; font-weight: 600; }
+    .achse {  font-size: 12px; fill: #3a3a3a; }
+    .mass  {  font-size: 13px; font-weight: 600; fill: #b3452c; }
+    .leg   {  font-size: 12.5px; fill: #333; }
+    .fuss  {  font-size: 12px; fill: #555; }
+    .halo  {  paint-order: stroke; stroke: #ffffff; stroke-width: 3.5px; stroke-linejoin: round; }
+  </style>
+</defs>
+<rect width="1140" height="500" fill="#ffffff"/>
+<text x="40" y="26" class="kopf">Blick von S&#252;dosten &#183; Winkel vom Ost-Strahl zur Normalen der Vorderseite</text>
+<path d="M13.5,242.0 L190.0,313.8 L366.5,242.0 L190.0,170.2 Z" fill="#efece6" stroke="#d6d1c6" stroke-width="1"/>
+<line x1="179.1" y1="246.4" x2="137.4" y2="263.4" stroke="#3a3a3a" stroke-width="1" marker-end="url(#pfeilAchse)"/>
+<line x1="200.9" y1="246.4" x2="242.6" y2="263.4" stroke="#3a3a3a" stroke-width="1" marker-end="url(#pfeilAchse)"/>
+<line x1="200.9" y1="237.6" x2="242.6" y2="220.6" stroke="#3a3a3a" stroke-width="1" marker-end="url(#pfeilAchse)"/>
+<line x1="179.1" y1="237.6" x2="137.4" y2="220.6" stroke="#3a3a3a" stroke-width="1" marker-end="url(#pfeilAchse)"/>
+<line x1="190.0" y1="242.0" x2="231.6" y2="278.3" stroke="#b3452c" stroke-width="1" stroke-dasharray="4 3"/>
+<path d="M256.2,268.9 L255.7,269.1 L255.2,269.3 L254.7,269.5 L254.2,269.7 L253.7,269.9 L253.2,270.1 L252.7,270.3 L252.2,270.4 L251.7,270.6 L251.2,270.8 L250.7,271.0 L250.2,271.2 L249.6,271.3 L249.1,271.5 L248.6,271.7 L248.1,271.9 L247.5,272.0 L247.0,272.2 L246.4,272.4 L245.9,272.5 L245.3,272.7 L244.8,272.9 L244.2,273.0 L243.7,273.2 L243.1,273.3 L242.6,273.5 L242.0,273.7 L241.4,273.8 L240.9,274.0 L240.3,274.1 L239.7,274.3 L239.1,274.4 L238.6,274.5 L238.0,274.7 L237.4,274.8 L236.8,275.0 L236.2,275.1 L235.6,275.2 L235.0,275.4 L234.4,275.5 L233.8,275.6 L233.2,275.8 L232.6,275.9 L232.0,276.0 L231.4,276.1 L230.8,276.3 L230.2,276.4 L229.6,276.5" fill="none" stroke="#b3452c" stroke-width="1.6" marker-end="url(#pfeilMass)"/>
+<line x1="151.0" y1="249.4" x2="151.0" y2="239.8" stroke="#5a5a5a" stroke-width="2.6"/>
+<line x1="229.0" y1="234.6" x2="229.0" y2="225.0" stroke="#5a5a5a" stroke-width="2.6"/>
+<g opacity="0.8"><line x1="188.4" y1="201.2" x2="158.6" y2="175.1" stroke="#8a8f98" stroke-width="2.4" stroke-dasharray="7 4" marker-end="url(#pfeilHinten)"/></g>
+<path d="M139.3,242.1 L239.3,223.1 L239.3,161.7 L139.3,180.7 Z" fill="#8a8f98" fill-opacity="0.35" stroke="#8a8f98" stroke-width="2"/>
+<path d="M140.7,243.3 L240.7,224.4 L240.7,163.0 L140.7,181.9 Z" fill="#0a66c2" fill-opacity="0.55" stroke="#0a66c2" stroke-width="2"/>
+<path d="M139.3,180.7 L239.3,161.7 L240.7,163.0 L140.7,181.9 Z" fill="#ffffff" fill-opacity="0.6" stroke="#4a4a4a" stroke-width="1"/>
+<line x1="191.6" y1="203.9" x2="228.5" y2="236.2" stroke="#0a66c2" stroke-width="2.4" marker-end="url(#pfeilVorn)"/>
+<text x="97.7" y="283.5" class="achse halo" text-anchor="middle">S</text>
+<text x="282.3" y="283.5" class="achse halo" text-anchor="middle">O</text>
+<text x="282.3" y="208.5" class="achse halo" text-anchor="middle">N</text>
+<text x="97.7" y="208.5" class="achse halo" text-anchor="middle">W</text>
+<text x="226.6" y="267.3" class="mass halo" text-anchor="middle">&#946; = +20&#176;</text>
+<text x="235.0" y="245.8" class="lab halo" fill="#0a66c2" text-anchor="middle">1,0</text>
+<text x="152.1" y="173.4" class="lab halo" fill="#8a8f98" text-anchor="middle">0,9</text>
+<text x="190.0" y="58" class="titel" text-anchor="middle">&#946; = +20&#176;</text>
+<text x="190.0" y="78" class="unter" text-anchor="middle">Montage normal</text>
+<text x="190.0" y="316" class="unter" text-anchor="middle">Vorderseite Azimut &#8722;70&#176;</text>
+<text x="190.0" y="332" class="unter" text-anchor="middle">R&#252;ckseite Azimut +110&#176;</text>
+<path d="M393.5,242.0 L570.0,313.8 L746.5,242.0 L570.0,170.2 Z" fill="#efece6" stroke="#d6d1c6" stroke-width="1"/>
+<line x1="559.1" y1="246.4" x2="517.4" y2="263.4" stroke="#3a3a3a" stroke-width="1" marker-end="url(#pfeilAchse)"/>
+<line x1="580.9" y1="246.4" x2="622.6" y2="263.4" stroke="#3a3a3a" stroke-width="1" marker-end="url(#pfeilAchse)"/>
+<line x1="580.9" y1="237.6" x2="622.6" y2="220.6" stroke="#3a3a3a" stroke-width="1" marker-end="url(#pfeilAchse)"/>
+<line x1="559.1" y1="237.6" x2="517.4" y2="220.6" stroke="#3a3a3a" stroke-width="1" marker-end="url(#pfeilAchse)"/>
+<line x1="570.0" y1="242.0" x2="639.6" y2="270.3" stroke="#b3452c" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="539.6" y1="254.4" x2="539.6" y2="244.7" stroke="#5a5a5a" stroke-width="2.6"/>
+<line x1="600.4" y1="229.6" x2="600.4" y2="220.0" stroke="#5a5a5a" stroke-width="2.6"/>
+<g opacity="0.8"><line x1="567.4" y1="201.5" x2="517.4" y2="181.1" stroke="#8a8f98" stroke-width="2.4" stroke-dasharray="7 4" marker-end="url(#pfeilHinten)"/></g>
+<path d="M529.8,248.6 L607.8,216.9 L607.8,155.5 L529.8,187.2 Z" fill="#8a8f98" fill-opacity="0.35" stroke="#8a8f98" stroke-width="2"/>
+<path d="M532.2,249.6 L610.2,217.8 L610.2,156.4 L532.2,188.2 Z" fill="#0a66c2" fill-opacity="0.55" stroke="#0a66c2" stroke-width="2"/>
+<path d="M529.8,187.2 L607.8,155.5 L610.2,156.4 L532.2,188.2 Z" fill="#ffffff" fill-opacity="0.6" stroke="#4a4a4a" stroke-width="1"/>
+<line x1="572.6" y1="203.6" x2="634.5" y2="228.8" stroke="#0a66c2" stroke-width="2.4" marker-end="url(#pfeilVorn)"/>
+<text x="477.7" y="283.5" class="achse halo" text-anchor="middle">S</text>
+<text x="662.3" y="283.5" class="achse halo" text-anchor="middle">O</text>
+<text x="662.3" y="208.5" class="achse halo" text-anchor="middle">N</text>
+<text x="477.7" y="208.5" class="achse halo" text-anchor="middle">W</text>
+<text x="615.1" y="264.4" class="mass halo" text-anchor="middle">&#946; = 0&#176;</text>
+<text x="645.3" y="237.2" class="lab halo" fill="#0a66c2" text-anchor="middle">1,0</text>
+<text x="506.5" y="180.7" class="lab halo" fill="#8a8f98" text-anchor="middle">0,9</text>
+<text x="570.0" y="58" class="titel" text-anchor="middle">&#946; = 0&#176;</text>
+<text x="570.0" y="78" class="unter" text-anchor="middle">Montage normal</text>
+<text x="570.0" y="316" class="unter" text-anchor="middle">Vorderseite Azimut &#8722;90&#176;</text>
+<text x="570.0" y="332" class="unter" text-anchor="middle">R&#252;ckseite Azimut +90&#176;</text>
+<path d="M773.5,242.0 L950.0,313.8 L1126.5,242.0 L950.0,170.2 Z" fill="#efece6" stroke="#d6d1c6" stroke-width="1"/>
+<line x1="939.1" y1="246.4" x2="897.4" y2="263.4" stroke="#3a3a3a" stroke-width="1" marker-end="url(#pfeilAchse)"/>
+<line x1="960.9" y1="246.4" x2="1002.6" y2="263.4" stroke="#3a3a3a" stroke-width="1" marker-end="url(#pfeilAchse)"/>
+<line x1="960.9" y1="237.6" x2="1002.6" y2="220.6" stroke="#3a3a3a" stroke-width="1" marker-end="url(#pfeilAchse)"/>
+<line x1="939.1" y1="237.6" x2="897.4" y2="220.6" stroke="#3a3a3a" stroke-width="1" marker-end="url(#pfeilAchse)"/>
+<line x1="950.0" y1="242.0" x2="1039.2" y2="258.9" stroke="#b3452c" stroke-width="1" stroke-dasharray="4 3"/>
+<path d="M1016.2,268.9 L1016.7,268.7 L1017.1,268.5 L1017.6,268.3 L1018.1,268.1 L1018.5,267.9 L1019.0,267.7 L1019.5,267.5 L1019.9,267.3 L1020.4,267.1 L1020.8,266.9 L1021.3,266.7 L1021.7,266.5 L1022.1,266.3 L1022.6,266.0 L1023.0,265.8 L1023.4,265.6 L1023.8,265.4 L1024.3,265.2 L1024.7,265.0 L1025.1,264.7 L1025.5,264.5 L1025.9,264.3 L1026.3,264.1 L1026.7,263.8 L1027.1,263.6 L1027.4,263.4 L1027.8,263.2 L1028.2,262.9 L1028.6,262.7 L1028.9,262.5 L1029.3,262.2 L1029.7,262.0 L1030.0,261.7 L1030.4,261.5 L1030.7,261.3 L1031.1,261.0 L1031.4,260.8 L1031.7,260.6 L1032.1,260.3 L1032.4,260.1 L1032.7,259.8 L1033.0,259.6 L1033.3,259.3 L1033.6,259.1 L1033.9,258.8 L1034.2,258.6 L1034.5,258.3 L1034.8,258.1" fill="none" stroke="#b3452c" stroke-width="1.6" marker-end="url(#pfeilMass)"/>
+<line x1="931.8" y1="257.9" x2="931.8" y2="248.2" stroke="#5a5a5a" stroke-width="2.6"/>
+<line x1="968.2" y1="226.1" x2="968.2" y2="216.5" stroke="#5a5a5a" stroke-width="2.6"/>
+<g opacity="0.8"><line x1="946.7" y1="201.9" x2="867.3" y2="186.9" stroke="#0a66c2" stroke-width="2.4" marker-end="url(#pfeilVorn)"/></g>
+<path d="M925.1,253.3 L971.8,212.6 L971.8,151.2 L925.1,191.9 Z" fill="#0a66c2" fill-opacity="0.30" stroke="#0a66c2" stroke-width="2"/>
+<path d="M928.2,253.9 L974.9,213.2 L974.9,151.8 L928.2,192.5 Z" fill="#8a8f98" fill-opacity="0.62" stroke="#8a8f98" stroke-width="2"/>
+<path d="M928.2,192.5 L974.9,151.8 L971.8,151.2 L925.1,191.9 Z" fill="#ffffff" fill-opacity="0.6" stroke="#4a4a4a" stroke-width="1"/>
+<line x1="953.3" y1="203.2" x2="1017.4" y2="215.3" stroke="#8a8f98" stroke-width="2.4" stroke-dasharray="7 4" marker-end="url(#pfeilHinten)"/>
+<text x="857.7" y="283.5" class="achse halo" text-anchor="middle">S</text>
+<text x="1042.3" y="283.5" class="achse halo" text-anchor="middle">O</text>
+<text x="1042.3" y="208.5" class="achse halo" text-anchor="middle">N</text>
+<text x="857.7" y="208.5" class="achse halo" text-anchor="middle">W</text>
+<text x="1002.3" y="260.9" class="mass halo" text-anchor="middle">&#946; = &#8722;20&#176;</text>
+<text x="853.4" y="188.2" class="lab halo" fill="#0a66c2" text-anchor="middle">1,0</text>
+<text x="1031.4" y="222.0" class="lab halo" fill="#8a8f98" text-anchor="middle">0,9</text>
+<text x="950.0" y="58" class="titel" text-anchor="middle">&#946; = &#8722;20&#176;</text>
+<text x="950.0" y="78" class="unter" text-anchor="middle">um 180&#176; gedreht montiert</text>
+<text x="950.0" y="316" class="unter" text-anchor="middle">Vorderseite Azimut +70&#176;</text>
+<text x="950.0" y="332" class="unter" text-anchor="middle">R&#252;ckseite Azimut &#8722;110&#176;</text>
+<line x1="215" y1="372" x2="259" y2="372" stroke="#0a66c2" stroke-width="2.4" marker-end="url(#pfeilVorn)"/>
+<text x="269" y="376" class="leg">Normale der Vorderseite, Faktor 1,0</text>
+<line x1="620" y1="372" x2="664" y2="372" stroke="#8a8f98" stroke-width="2.4" stroke-dasharray="7 4" marker-end="url(#pfeilHinten)"/>
+<text x="674" y="376" class="leg">Normale der R&#252;ckseite, Faktor 0,9</text>
+<line x1="40" y1="394" x2="1100" y2="394" stroke="#e2e2e2" stroke-width="1"/>
+<text x="40" y="416" class="fuss">&#946; ist die Orientierung der Modulebene. Hier aufgezogen vom Ost-Strahl zur Normalen der Vorderseite; Seite A liegt bei Azimut &#946; &#8722; 90&#176;, Seite B bei &#946; + 90&#176;.</text>
+<text x="40" y="434" class="fuss">Der Azimut wird wie bei PVGIS von S&#252;d gez&#228;hlt, negativ nach Ost und positiv nach West. Alle drei Aufstellungen stehen senkrecht, Neigung 90&#176;.</text>
+<text x="40" y="452" class="fuss">Bei &#946; = 0 verl&#228;uft die Modulebene in Nord-S&#252;d-Richtung, die Fl&#228;chen zeigen nach Ost und West. Bei &#946; = +90&#176; nach S&#252;d und Nord.</text>
+<text x="40" y="470" class="fuss">Die um 180&#176; gedrehte Montage belegt dieselbe Ebene mit vertauschten Seiten; der Faktor 1,0 liegt dann auf der anderen Himmelsrichtung.</text>
+</svg>
